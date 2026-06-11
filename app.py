@@ -2,16 +2,19 @@ import streamlit as st
 import pickle
 import numpy as np
 import pandas as pd
-
+# from pathlib import Path
+# import sys
+# sys.path.append('../')
+# from config import ROOT
 
 # Load model, scaler, and encoder
-with open('PersonalityClassifier.pkl', 'rb') as f:
+with open('./PersonalityClassifier.pkl', 'rb') as f:
     model = pickle.load(f)
 
-with open('Scaler.pkl', 'rb') as f:
+with open('./Scaler.pkl', 'rb') as f:
     scaler = pickle.load(f)
 
-with open('Encoder.pkl', 'rb') as f:
+with open('./Encoder.pkl', 'rb') as f:
     encoder = pickle.load(f)
 
 st.set_page_config(page_title="Personality Classifier", page_icon=":guardsman:", layout="wide")
